@@ -2,12 +2,12 @@
   "name": "open-pro-next",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
+"scripts": {
+  "dev": "next dev",
+  "build": "next build && next export",
+  "start": "next start",
+  "lint": "next lint"
+},
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@types/node": "^22.13.0",
