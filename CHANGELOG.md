@@ -1,4 +1,4 @@
-# CHANGELOG.md
+## CHANGELOG.md
 
 ## [5.0.0] - 2025-02-04
 
