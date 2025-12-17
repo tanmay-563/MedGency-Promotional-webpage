@@ -1,39 +1,47 @@
 "use client";
-
 import Link from "next/link";
-import Logo from "./logo";
+import { useState } from "react";
 
-export default function Header() {
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <header className="z-30 mt-2 w-full md:mt-5">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="relative flex h-14 items-center justify-between gap-3 rounded-2xl bg-gray-900/90 px-3 before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_right,var(--color-gray-800),var(--color-gray-700),var(--color-gray-800))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] after:absolute after:inset-0 after:-z-10 after:backdrop-blur-xs">
-          {/* Site branding */}
-          <div className="flex flex-1 items-center">
-            <Logo />
-          </div>
+    <nav className="w-full text-blue-600 shadow-md fixed top-0 left-0 z-50">
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+        
+        {/* Logo */}
+        <Link href="logo" className="text-2xl font-bold text-blue-600">
+          MedGency
+        </Link>
 
-          {/* Desktop sign in links */}
-          <ul className="flex flex-1 items-center justify-end gap-3">
-            <li>
-              <Link
-                href="/signin"
-                className="btn-sm relative bg-linear-to-b from-gray-800 to-gray-800/60 bg-[length:100%_100%] bg-[bottom] py-[5px] text-gray-300 before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_right,var(--color-gray-800),var(--color-gray-700),var(--color-gray-800))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] hover:bg-[length:100%_150%]"
-              >
-                Sign In
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/signup"
-                className="btn-sm bg-linear-to-t from-indigo-600 to-indigo-500 bg-[length:100%_100%] bg-[bottom] py-[5px] text-white shadow-[inset_0px_1px_0px_0px_--theme(--color-white/.16)] hover:bg-[length:100%_150%]"
-              >
-                Register
-              </Link>
-            </li>
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex gap-8 text-lg">
+          <li><Link href="/signin" className="hover:text-white">SignIn</Link></li>
+          <li><Link href="/signup" className="hover:text-white">SignUp</Link></li>
+          
+        </ul>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden flex flex-col gap-1"
+          onClick={() => setOpen(!open)}
+        >
+          <span className="w-6 h-1 bg-black" />
+          <span className="w-6 h-1 bg-black" />
+          <span className="w-6 h-1 bg-black" />
+        </button>
+      </div>
+
+      {/* Mobile Dropdown */}
+      {open && (
+        <div className="md:hidden bg-white w-full shadow-md">
+          <ul className="flex flex-col py-4 space-y-4 text-center text-lg">
+            <li><Link href="/signin" onClick={() => setOpen(false)}>SignIn</Link></li>
+            <li><Link href="/signup" onClick={() => setOpen(false)}>SignUp</Link></li>
+          
           </ul>
         </div>
-      </div>
-    </header>
+      )}
+    </nav>
   );
 }

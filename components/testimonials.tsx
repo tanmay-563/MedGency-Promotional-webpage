@@ -2,107 +2,32 @@
 
 import { useState } from "react";
 import useMasonry from "@/utils/useMasonry";
-import Image, { StaticImageData } from "next/image";
-import TestimonialImg01 from "@/public/images/testimonial-01.jpg";
-import TestimonialImg02 from "@/public/images/testimonial-02.jpg";
-import TestimonialImg03 from "@/public/images/testimonial-03.jpg";
-import TestimonialImg04 from "@/public/images/testimonial-04.jpg";
-import TestimonialImg05 from "@/public/images/testimonial-05.jpg";
-import TestimonialImg06 from "@/public/images/testimonial-06.jpg";
-import TestimonialImg07 from "@/public/images/testimonial-07.jpg";
-import TestimonialImg08 from "@/public/images/testimonial-08.jpg";
-import TestimonialImg09 from "@/public/images/testimonial-09.jpg";
-import ClientImg01 from "@/public/images/client-logo-01.svg";
-import ClientImg02 from "@/public/images/client-logo-02.svg";
-import ClientImg03 from "@/public/images/client-logo-03.svg";
-import ClientImg04 from "@/public/images/client-logo-04.svg";
-import ClientImg05 from "@/public/images/client-logo-05.svg";
-import ClientImg06 from "@/public/images/client-logo-06.svg";
-import ClientImg07 from "@/public/images/client-logo-07.svg";
-import ClientImg08 from "@/public/images/client-logo-08.svg";
-import ClientImg09 from "@/public/images/client-logo-09.svg";
+
 
 const testimonials = [
   {
-    img: TestimonialImg01,
-    clientImg: ClientImg01,
-    name: "Meera S",
-    company: "Senior ICU Nurse",
     content:
-      "ICU teams handle unstable patients who may suddenly need ventilator drugs, dialysis consumables, or blood products. MedGency aims to give them a live view of incoming supplies, ETAs, and escalation paths so they can prepare the team and equipment before the resource even reaches the hospital.",
-    categories: [1, 3, 5],
+      "Trying to  connect different blood banks with hospitals as well as different other blood banks in need of blood supplies during emergencies. MedGency aims to streamline this process by providing a unified platform for real-time inventory management, urgent request handling, and optimized delivery routes, ensuring that life-saving blood units reach patients without delay.",
+    categories: [1, 3],
   },
   {
-    img: TestimonialImg02,
-    clientImg: ClientImg02,
-    name: "Dr. Arjun R.",
-    company: "Emergency Medicine",
+   
     content:
-      "I've tried several content generation tools, but this AI-driven tool is by far the best. It understands my brand's voice and consistently produces content that resonates with my audience!",
-    categories: [1, 2, 4],
+      "We are trying to connect hospitals and clinics in need of urgent medical supplies in emergency with our platform as fast as possible. MedGency will provide real-time tracking, proof-of-delivery, and automated documentation to ensure every critical shipment reaches its destination on time and intact.",
+    categories: [1, 2],
   },
+
   {
-    img: TestimonialImg03,
-    clientImg: ClientImg03,
-    name: "Rajesh K.",
-    company: "Blood Bank Coordinator",
     content:
-      "Blood banks struggle to broadcast real-time stock to every hospital that might need it. With MedGency, they’ll be able to publish their inventory and respond to urgent requests instantly, while the system handles transport logistics, tracking, and documentation for every unit dispatched.",
-      categories: [1, 2, 5],
-  },
-  {
-    img: TestimonialImg04,
-    clientImg: ClientImg04,
-    name: "Dr. Nisha P",
-    company: "Transplant Coordinator",
-    content:
-      "Organ retrieval teams need precise coordination between donor and recipient hospitals. MedGency is being designed to support them with secure organ transfer workflows, chain-of-custody logs, and live tracking of organ containers so that every second of the organ’s journey is visible and accounted for.",
+      "Providing 24/7 support from our end to the user and guiding them through the process. With a chatbot integrated into the platform, users can get instant answers to common questions, track their requests, and receive updates on delivery status without waiting on hold.It will provide better support in case of emergencies.",
       categories: [1, 4],
   },
+  
   {
-    img: TestimonialImg05,
-    clientImg: ClientImg05,
-    name: "Imran S.",
-    company: "Emergency Transport Lead",
+  
     content:
-      "Ambulance operators and medical couriers often move blindly, without synchronized information from hospitals and blood banks. MedGency will connect them into a single network, provide optimized routes, and send real-time updates so that drivers know exactly what they’re carrying, where it’s needed, and how fast they must get there.",
-      categories: [1, 3, 5],
-  },
-  {
-    img: TestimonialImg06,
-    clientImg: ClientImg06,
-    name: "Asha V",
-    company: "Regular Blood Donor",
-    content:
-      "Voluntary blood and organ donors want to help when it truly matters but rarely know when there’s an urgent need. MedGency plans to notify verified donors in nearby areas, coordinate donation slots, and keep them informed about how their contribution fits into a real emergency response.",
-      categories: [1, 3],
-  },
-  {
-    img: TestimonialImg06,
-    clientImg: ClientImg06,
-    name: "Asha V",
-    company: "Regular Blood Donor",
-    content:
-      "Voluntary blood and organ donors want to help when it truly matters but rarely know when there’s an urgent need. MedGency plans to notify verified donors in nearby areas, coordinate donation slots, and keep them informed about how their contribution fits into a real emergency response.",
-      categories: [1, 3, 5],
-  },
-  {
-    img: TestimonialImg06,
-    clientImg: ClientImg06,
-    name: "Asha V",
-    company: "Regular Blood Donor",
-    content:
-      "Voluntary blood and organ donors want to help when it truly matters but rarely know when there’s an urgent need. MedGency plans to notify verified donors in nearby areas, coordinate donation slots, and keep them informed about how their contribution fits into a real emergency response.",
-      categories: [1, 4],
-  },
-  {
-    img: TestimonialImg03,
-    clientImg: ClientImg03,
-    name: "Rajesh K.",
-    company: "Blood Bank Coordinator",
-    content:
-      "Blood banks struggle to broadcast real-time stock to every hospital that might need it. With MedGency, they’ll be able to publish their inventory and respond to urgent requests instantly, while the system handles transport logistics, tracking, and documentation for every unit dispatched.",
-      categories: [1, 2, 5],
+      "Any other medical emergencies like booking bed or transferring a patience or providing them with other services in emergency will be done. Many different services will be provided to the user in case of emergencies in future also based on requirements.",
+      categories: [1, 5],
   },
 ];
 
@@ -187,7 +112,7 @@ export default function Testimonials() {
                 >
                   <path d="M3.757 3.758a6 6 0 0 1 8.485 8.485 5.992 5.992 0 0 1-5.301 1.664 1 1 0 1 0-.351 1.969 8 8 0 1 0-4.247-2.218 1 1 0 0 0 1.415-.001L9.12 8.294v1.827a1 1 0 1 0 2 0v-4.2a.997.997 0 0 0-1-1.042H5.879a1 1 0 1 0 0 2h1.829l-4.599 4.598a6 6 0 0 1 .648-7.719Z" />
                 </svg>
-                <span>Transplant Centers</span>
+                <span>24*7 Support</span>
               </button>
               {/* Button #5 */}
               <button
@@ -233,10 +158,8 @@ export function Testimonial({
   children,
 }: {
   testimonial: {
-    img: StaticImageData;
-    clientImg: StaticImageData;
-    name: string;
-    company: string;
+  
+   
     content: string;
     categories: number[];
   };
@@ -249,19 +172,13 @@ export function Testimonial({
     >
       <div className="flex flex-col gap-4">
         <div>
-          <Image src={testimonial.clientImg} height={36} alt="Client logo" />
+         
         </div>
         <p className="text-indigo-200/65 before:content-['“'] after:content-['”']">
           {children}
         </p>
         <div className="flex items-center gap-3">
-          <Image
-            className="inline-flex shrink-0 rounded-full"
-            src={testimonial.img}
-            width={36}
-            height={36}
-            alt={testimonial.name}
-          />
+          
           <div className="text-sm font-medium text-gray-200">
             <span>{testimonial.name}</span>
             <span className="text-gray-700"> - </span>

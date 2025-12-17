@@ -55,8 +55,8 @@ export default function ModalVideo({
         <Image
           className="md:max-w-none"
           src={SecondaryIllustration}
-          width={1165}
-          height={1012}
+          width={25}
+          height={25}
           alt="Secondary illustration"
         />
       </div>

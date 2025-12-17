@@ -91,7 +91,7 @@ export default function Footer() {
 
             <div className="text-sm">
               <p className="mb-3 text-indigo-200/65">
-                © github.com/tanmay-563
+          
                 <span className="text-gray-700"> · </span>
 
                 <a
@@ -99,7 +99,7 @@ export default function Footer() {
                   onClick={handlePlaceholder}
                   className="text-indigo-200/65 transition hover:text-indigo-500"
                 >
-                  Terms
+                  Terms and conditions applied.
                 </a>
               </p>
 
