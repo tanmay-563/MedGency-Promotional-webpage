@@ -72,7 +72,7 @@ export default function ModalVideo({
         {/* Removed overlay + filters so original colours show */}
         <figure className="relative overflow-hidden rounded-2xl shadow-lg">
           <Image
-            className="block h-auto w-full"
+            className="block h-auto "
             src={thumb}
             width={thumbWidth}
             height={thumbHeight}
@@ -133,7 +133,7 @@ export default function ModalVideo({
         <div className="fixed inset-0 z-99999 flex items-center justify-center px-4 sm:px-6">
           <DialogPanel
             transition
-            className="aspect-video w-full max-w-4xl overflow-hidden rounded-2xl bg-black shadow-2xl duration-300 ease-out data-closed:scale-95 data-closed:opacity-0"
+            className="aspect-video max-w-4xl overflow-hidden rounded-2xl bg-black shadow-2xl duration-300 ease-out data-closed:scale-95 data-closed:opacity-0"
           >
             <video
               ref={videoRef}
@@ -141,7 +141,7 @@ export default function ModalVideo({
               height={videoHeight}
               loop
               controls
-              className="h-full w-full"
+              className="h-full "
             >
               <source src={video} type="video/mp4" />
               Your browser does not support the video tag.

@@ -67,7 +67,7 @@ export default function HeroHome() {
           >
             <ModalVideo
               thumb={VideoThumb}
-              thumbWidth={450}
+              thumbWidth={550}
               thumbHeight={500}
               thumbAlt="Modal video thumbnail"
               video="/videos/video.mp4"
