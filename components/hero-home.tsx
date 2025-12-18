@@ -44,7 +44,8 @@ export default function HeroHome() {
               data-aos-delay={400}
             >
               <Link
-                href="https://github.com/medgency3004-startup"
+                href="https://forms.gle/1C5WE3RAqe3MEZ6v5"
+
                 className="btn rounded-full bg-indigo-500 px-8 text-white shadow-sm hover:bg-indigo-600"
               >
                 Support Us →
